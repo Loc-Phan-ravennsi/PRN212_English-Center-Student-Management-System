@@ -27,7 +27,7 @@ namespace Project
         {
             if (tbEmail.Text == "" || pbPassword.Password == "")
             {
-                MessageBox.Show("Please enter your email and password.");
+                tbError.Text = "Please enter your email and password!";
                 return;
             }
             if (context.Teachers.Any(u => u.Email == tbEmail.Text && u.Password == pbPassword.Password))
@@ -39,11 +39,11 @@ namespace Project
             }
             else
             {
-                MessageBox.Show("Invalid email or password.");
+                tbError.Text = "Invalid email or password.";
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
