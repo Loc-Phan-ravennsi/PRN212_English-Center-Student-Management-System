@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Project.Models;
 
 namespace Project
 {
@@ -16,6 +17,7 @@ namespace Project
     /// </summary>  
     public partial class LoginWindow : Window
     {
+        EnglishCenterDbContext context = new();
         public LoginWindow()
         {
             InitializeComponent();
@@ -23,7 +25,22 @@ namespace Project
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-
+            if (tbEmail.Text == "" || pbPassword.Password == "")
+            {
+                MessageBox.Show("Please enter your email and password.");
+                return;
+            }
+            if (context.Teachers.Any(u => u.Email == tbEmail.Text && u.Password == pbPassword.Password))
+            {
+                Teacher teacher = context.Teachers.FirstOrDefault(u => u.Email == tbEmail.Text && u.Password == pbPassword.Password);
+                //LoginWindow loginWindow = new(teacher);
+                //loginWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid email or password.");
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
