@@ -21,15 +21,14 @@ namespace Project
             InitializeComponent();
         }
 
-        private void Login_Click(object sender, RoutedEventArgs e)
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            // Handle login logic here  
+
         }
 
-        private void Close_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
     }
 }
