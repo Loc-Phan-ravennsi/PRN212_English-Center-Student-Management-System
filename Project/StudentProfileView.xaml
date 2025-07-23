@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="Project.StudentProfileView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Project"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="900">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Text="Student Profile"
+               FontSize="28"
+               FontWeight="Bold"
+               Margin="0,0,0,20" />
+
+        <!-- Personal Info -->
+        <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,10,0,20" Width="500">
+            <TextBlock Text="Full Name: " FontWeight="Bold" />
+            <TextBox x:Name="txtFullName" IsReadOnly="True"/>
+
+            <TextBlock Text="Student ID: " FontWeight="Bold" Margin="0,10,0,0"/>
+            <TextBox x:Name="txtStudentId" IsReadOnly="True" />
+        </StackPanel>
+
+        <!-- Score and Feedback Section -->
+        <Grid Grid.Row="2" Width="500">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Scores -->
+            <TextBlock Text="Scores (0 - 9):" FontSize="20" FontWeight="Bold" Grid.Row="0" Margin="0,0,0,10"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,0,0,20">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Listening"/>
+                    <TextBox x:Name="txtListening" Width="100"/>
+                </StackPanel>
+                <StackPanel Margin="10">
+                    <TextBlock Text="Speaking"/>
+                    <TextBox x:Name="txtSpeaking" Width="100"/>
+                </StackPanel>
+                <StackPanel Margin="10">
+                    <TextBlock Text="Reading"/>
+                    <TextBox x:Name="txtReading" Width="100"/>
+                </StackPanel>
+                <StackPanel Margin="10">
+                    <TextBlock Text="Writing"/>
+                    <TextBox x:Name="txtWriting" Width="100"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- AI Suggestions -->
+            <TextBlock Text="AI Suggestion:" FontSize="20" FontWeight="Bold" Grid.Row="2" Margin="0,10,0,5"/>
+            <TextBox x:Name="txtAISuggestion" Grid.Row="3" Height="80" TextWrapping="Wrap"
+                 IsReadOnly="True" VerticalScrollBarVisibility="Auto" />
+
+            <!-- Weekly Feedback -->
+            <TextBlock Text="Teacher Feedback:" FontSize="20" FontWeight="Bold" Grid.Row="4" Margin="0,10,0,5"/>
+            <TextBox x:Name="txtFeedback" Grid.Row="5" AcceptsReturn="True" Height="100"
+                 TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Margin="0,10,0,45" />
+        </Grid>
+
+        <!-- Save Button -->
+        <Button 
+            Name="btnSave"
+            Content="Save"
+            Background="LawnGreen"
+            HorizontalAlignment="Right"
+            Width="90" Height="25"
+            Margin="0,20,0,0"
+            VerticalAlignment="Bottom"
+            Grid.Row="3" Click="btnSave_Click"/>
+    </Grid>
+        </ScrollViewer>
+</UserControl>

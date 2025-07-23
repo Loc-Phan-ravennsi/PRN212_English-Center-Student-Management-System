@@ -37,7 +37,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="View"
-                                    Click="ViewStudentProfile_Click"
+                                    
                                     Tag="{Binding StudentID}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

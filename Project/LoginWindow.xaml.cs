@@ -33,8 +33,8 @@ namespace Project
             if (context.Teachers.Any(u => u.Email == tbEmail.Text && u.Password == pbPassword.Password))
             {
                 Teacher teacher = context.Teachers.FirstOrDefault(u => u.Email == tbEmail.Text && u.Password == pbPassword.Password);
-                //LoginWindow loginWindow = new(teacher);
-                //loginWindow.Show();
+                MainWindow main = new MainWindow(teacher);
+                main.Show();
                 this.Close();
             }
             else

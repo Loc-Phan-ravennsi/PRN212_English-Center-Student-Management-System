@@ -18,6 +18,7 @@ public partial class Score
     public double Writing { get; set; }
 
     public int WeekNumber { get; set; }
+    public string? Feedback { get; set; }
 
     public DateTime CreatedAt { get; set; }
 
