@@ -92,5 +92,30 @@ namespace Project
                 }
             }
         }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+
+            if (btn?.Tag is StudentWeekInfo info)
+            {
+                var result = MessageBox.Show($"Remove from this class?", "Confirm", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    var student = context.Students.FirstOrDefault(s => s.StudentsId == info.StudentId);
+                    if (student != null)
+                    {
+                        student.ClassId = null;
+                        context.SaveChanges();
+                        if (cbWeek.SelectedItem is int week)
+                        {
+                            LoadStudents(week);
+                        }
+                    }
+                }
+            }
+
+        }
+
     }
 }

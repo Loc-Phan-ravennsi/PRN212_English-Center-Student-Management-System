@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Microsoft.Extensions.Configuration;
 namespace Project.Models;
 
 public partial class Class
@@ -14,4 +14,8 @@ public partial class Class
     public virtual ICollection<Student> Students { get; set; } = new List<Student>();
 
     public virtual Teacher Teacher { get; set; } = null!;
+
+
+
+    
 }

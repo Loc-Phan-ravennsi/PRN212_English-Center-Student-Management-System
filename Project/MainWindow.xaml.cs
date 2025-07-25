@@ -33,9 +33,22 @@ namespace Project
             MainContent.Content = new DashboardView();
         }
 
-        private void Statistics_Click(object sender, RoutedEventArgs e)
+        private void Add_Click(object sender, RoutedEventArgs e)
         {
-            //MainContent.Content = new StatisticsView();
+            var addWindow = new AddStudent();
+            addWindow.ShowDialog();
+        }
+
+        private void AddToClass_Click(object sender, RoutedEventArgs e)
+        {
+            var addToClassWindow = new AddStudentToClass();
+            addToClassWindow.ShowDialog();
+        }
+
+        private void AddScore_Click(object sender, RoutedEventArgs e)
+        {
+            var addScoreWindow = new AddScore();
+            addScoreWindow.ShowDialog();
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)
@@ -43,6 +56,12 @@ namespace Project
             var login = new LoginWindow();
             login.Show();
             this.Close();
+        }
+
+        private void DeleteStudent_Click(object sender, RoutedEventArgs e)
+        {
+            var deleteStudentWindow = new DeleteStudent();
+            deleteStudentWindow.ShowDialog();
         }
     }
 

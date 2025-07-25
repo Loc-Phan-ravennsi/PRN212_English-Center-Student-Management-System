@@ -1,0 +1,31 @@
+﻿<Window x:Class="Project.AddStudentToClass"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="AddStudentToClass" Height="220" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Label và ComboBox chọn học sinh -->
+        <Label Content="Student:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,10"/>
+        <ComboBox x:Name="cbStudents" Grid.Row="0" Grid.Column="1" DisplayMemberPath="FullName" Margin="0,0,0,10"/>
+
+        <!-- Label và ComboBox chọn lớp -->
+        <Label Content="Class:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,10"/>
+        <ComboBox x:Name="cbClasses" Grid.Row="1" Grid.Column="1" DisplayMemberPath="ClassName" Margin="0,0,0,10"/>
+
+        <!-- Nút Add -->
+        <Button Content="Add" Grid.Row="2" Grid.ColumnSpan="2" Width="100" HorizontalAlignment="Center" Click="btnAdd_Click"/>
+    </Grid>
+</Window>

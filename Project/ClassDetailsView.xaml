@@ -42,7 +42,7 @@
                 <DataGridTemplateColumn Width="80">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Name="btnDelete" Content="Delete" Tag="{Binding Info}"/>
+                            <Button Name="btnDelete" Content="Delete" Tag="{Binding Info}" Click="btnDelete_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

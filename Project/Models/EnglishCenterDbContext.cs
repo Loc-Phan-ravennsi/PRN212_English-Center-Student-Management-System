@@ -71,6 +71,7 @@ public partial class EnglishCenterDbContext : DbContext
             entity.HasOne(d => d.Class).WithMany(p => p.Students)
                 .HasForeignKey(d => d.ClassId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
+                .IsRequired(false)
                 .HasConstraintName("FK__Students__ClassI__3D5E1FD2");
         });
 

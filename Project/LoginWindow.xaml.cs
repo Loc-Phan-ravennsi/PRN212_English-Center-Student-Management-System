@@ -37,6 +37,13 @@ namespace Project
                 main.Show();
                 this.Close();
             }
+            if (context.Students.Any(u => u.Email == tbEmail.Text && u.Password == pbPassword.Password))
+            {
+                Student student = context.Students.FirstOrDefault(u => u.Email == tbEmail.Text && u.Password == pbPassword.Password);
+                StudentWindow studentWindow = new StudentWindow(student);
+                studentWindow.Show();
+                this.Close();
+            }
             else
             {
                 tbError.Text = "Invalid email or password.";
