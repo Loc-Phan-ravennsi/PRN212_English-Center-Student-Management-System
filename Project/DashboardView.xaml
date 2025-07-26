@@ -10,7 +10,7 @@
         <!-- Main Content -->
         <Grid>
             <StackPanel>
-                <TextBlock Text="Danh sách lớp học" FontSize="22" FontWeight="Bold" Margin="0,0,0,10"/>
+                <TextBlock Text="List of Classes" FontSize="22" FontWeight="Bold" Margin="0,0,0,10"/>
 
                 <DataGrid x:Name="dgClassList" AutoGenerateColumns="False" Height="400">
                     <DataGrid.Columns>
@@ -21,7 +21,7 @@
                         <DataGridTemplateColumn Header="Action" Width="80">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Name="btnDetails" Content="Chi tiết" Tag="{Binding ClassId}" Click="btnDetails_Click"/>
+                                    <Button Name="btnDetails" Content="Details" Tag="{Binding ClassId}" Click="btnDetails_Click"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
